@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Measure your weight in others planets</h1>
+    <h2>This is your wight =</h2>
+    <form>
+        <input type="number" name="number" id="weight">Cual es tu peso?
+        <input type="number" name="planet" id="planet">Elige tu planeta <br> es marte, 2 es jupiter
+        <button type="button" onclick="getData()">See your weight</button>
+    </form>
+
+    <script>
+  
+  
+    let getData = () =>{
+          let usuario = document.getElementById('weight').value;
+          let planeta = document.getElementById('planet').value;
+          
+          console.log(usuario, planeta);
+    let peso = usuario;
+    let g_tierra = 9.8;
+
+    let g_marte = 3.7;
+    let g_jupiter = 24.8;
+    let peso_final;
+    if (planeta == 1)
+    {
+        peso_final = peso * g_marte / g_tierra;
+        document.write("Your weigth on Mars is <strong>" + peso_final + " kilos</strong>");
+    }
+    else if(planeta == 2)
+    {
+        peso_final = peso * g_jupiter / g_tierra;
+        document.write("Your weigth on Jupiter is <strong>" + peso_final + " kilos</strong>");
+    }
+    else
+    {
+      peso_final = 1000000;
+      document.write("Your weigth on Krypton is <strong>" + peso_final + " kilos</strong>");
+    }   
+    }
+    getData();
+   
+    </script>
+</body>
+</html>
